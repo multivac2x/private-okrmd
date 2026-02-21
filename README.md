@@ -233,24 +233,9 @@ A **Pulse** is a bounded interval of focused effort:
 
 Humans log each Pulse in their daily pulse file. Agents checkpoint after each Pulse to manage context window limits. The pulse rhythm creates sustainable, measurable progress.
 
-### Cross-References
-
-OKRMD uses wiki-style `[[ID]]` links to connect entities:
-
-```markdown
-This story depends on [[S1.1]] and blocks [[S2.2]].
-Assigned to [[claude-code]] with [[alice]] as reviewer.
-See [[PRD-iot-dashboard]] for requirements.
-Parent objective: [[O1]]
-```
-
-These links are resolved by tools and provide traceability from any task to strategic objectives.
-
----
-
 ## 📚 Documentation
 
-This repository contains the complete OKRMD standard documentation:
+This repository contains the initial OKRMD standard documentation:
 
 | Document | Purpose |
 |----------|---------|
@@ -266,121 +251,11 @@ This repository contains the complete OKRMD standard documentation:
 
 ## 🛠️ Installation & Setup
 
-OKRMD is **just markdown files** — there's no software to install. However, you may want tooling support:
-
-### Editor Plugins
-
-- **VS Code**: Install the "Markdown All in One" extension for preview
-- **Obsidian**: Create a vault pointing to your repository
-- **Cursor**: Native markdown support with AI assistance
-
-### Optional CLI Tools
-
-Community-maintained tools (not required):
-
-- `okrmd-validate` — validates your `.okrmd/` structure
-- `okrmd-report` — generates velocity and OKR score reports
-- `okrmd-link` — resolves and checks wiki-links
-
-Check the [community tools directory](https://github.com/pescatoreluca/okrmd/tree/main/tools) for installation instructions.
-
----
+OKRMD is **just markdown files** — there's no software to install.
 
 ## 📖 Usage Examples
 
-### Setting a Strategic Goal
-
-Create `.okrmd/objectives/O1-grow-revenue.md`:
-
-```markdown
-# Objective: Grow Revenue
-
-| Field | Value |
-|-------|-------|
-| ID | O1 |
-| Title | Grow Revenue |
-| Owner | alice |
-| Status | active |
-| Cadence | Q1 2026 |
-
-## Description
-
-Increase monthly recurring revenue by expanding into new markets.
-
-## Key Results
-
-| Key Result | Target | Current |
-|------------|--------|---------|
-| [[KR-1.1]] | $100K MRR | $65K |
-| [[KR-1.2]] | 500 customers | 320 |
-| [[KR-1.3]] | 20% expansion revenue | 12% |
-```
-
-### Planning a Sprint
-
-Create `.okrmd/cycles/C05/_cycle.md`:
-
-```markdown
-# Cycle C05: Feature Sprint
-
-| Field | Value |
-|-------|-------|
-| ID | C05 |
-| Goal | Complete alert system MVP |
-| Start | 2026-02-19 |
-| End | 2026-03-04 |
-| Status | planning |
-
-## Committed Work
-
-| Story | Title | Assignee | Autonomy | Est. |
-|-------|-------|----------|----------|------|
-| [[S2.1]] | Alert backend | claude-code | A2 | 8 |
-| [[S2.2]] | Alert UI components | alice | A4 | 5 |
-| [[S2.3]] | Alert configuration | bob | A3 | 6 |
-
-## Capacity
-
-| Team Member | Available Pulses | Total Capacity |
-|-------------|------------------|----------------|
-| alice | 8/day × 10 days | 80 |
-| bob | 8/day × 10 days | 80 |
-| claude-code | 12/day × 10 days | 120 |
-
-**Total committed**: 19 pulses (well under 80% capacity)
-```
-
-### Logging Daily Work
-
-Create `.okrmd/pulses/2026-02-19-alice.md`:
-
-```markdown
-# Pulse Log — alice — 2026-02-19
-
-| Metric | Value |
-|--------|-------|
-| Pulses completed | 0 |
-| Total focus time | 0 min |
-
-## Pulse 1 (09:00–09:25) — 25 min
-- **Task**: [[S2.2]] — Alert UI components
-- **Status**: Completed basic AlertButton component
-- **Interruptions**: 0 (Slack, then back to work)
-
-## Pulse 2 (09:30–09:55) — 25 min
-- **Task**: [[S2.2]] — AlertButton tests
-- **Status**: Wrote 85% of unit tests
-- **Interruptions**: 1 (quick question from bob)
-
-## End of Day Reflection
-
-- **Accomplishments**: AlertButton component + tests ready for review
-- **Blockers**: None
-- **Tomorrow's first task**: [[S2.2]] — AlertList component
-- **Energy level**: 7/10 — good focus day
-```
-
----
+Soon some real life examples will be released.
 
 ## 🤝 Contributing
 
@@ -399,11 +274,10 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on:
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Make your changes
-4. Add or update tests as needed
-5. Ensure documentation is updated
-6. Commit (`git commit -m 'Add amazing feature'`)
-7. Push (`git push origin feature/amazing-feature`)
-8. Open a Pull Request
+4. Ensure documentation is updated
+5. Commit (`git commit -m 'Add new feature'`)
+6. Push (`git push origin feature/new-feature`)
+7. Open a Pull Request
 
 ---
 
@@ -425,29 +299,15 @@ OKRMD synthesizes best practices from:
 
 ---
 
-## 📞 Support
-
-- **Documentation**: See the [docs folder](tmp/) for complete standards
-- **Issues**: [GitHub Issues](https://github.com/pescatoreluca/okrmd/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/pescatoreluca/okrmd/discussions)
-- **Email**: [Open an issue](https://github.com/pescatoreluca/okrmd/issues/new) for direct contact
-
----
-
 ## 🗺️ Roadmap
 
 OKRMD v0.1 is the **initial public release** with core functionality stable.
 
-Future versions may include:
+Future versions will include:
 
+- [ ] Review of the initial draft proposal for Stories
+- [ ] Review of the initial draft proposal for Epics
 - [ ] Official schema validation tool
-- [ ] VS Code extension with autocomplete
-- [ ] GitHub Actions for automated OKR scoring
-- [ ] Integration with popular project management tools
-- [ ] Enhanced reporting dashboards
-- [ ] Multi-language support
-
-See [ROADMAP.md](ROADMAP.md) for details.
 
 ---
 
