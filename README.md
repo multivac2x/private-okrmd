@@ -13,7 +13,7 @@
 
 ## 📖 What is OKRMD?
 
-OKRMD (Objectives and Key Results in Markdown) is a comprehensive framework that combines:
+OKRMD (Objectives and Key Results in Markdown) it tries to be a comprehensive framework that combines:
 
 - **OKR methodology** for strategic goal setting and tracking
 - **Agile project management** with sprints (cycles), epics, and stories
@@ -28,6 +28,7 @@ Traditional project management tools (Jira, Asana, Linear) are proprietary, expe
 - ✅ **Are human-readable** — open in any text editor
 - ✅ **Are AI-parsable** — agents can read and write natively
 - ✅ **Version control friendly** — full Git history, diffs, branches
+- ✅ **Machine parsable** — automatic tools for validation
 - ✅ **Vendor independent** — no platform lock-in, no API changes
 - ✅ **Portable** — works with Obsidian, VS Code, Cursor, or any editor
 - ✅ **Scalable** — from solo developers to large distributed teams
@@ -40,172 +41,8 @@ Traditional project management tools (Jira, Asana, Linear) are proprietary, expe
 
 - A text editor (VS Code, vim, Obsidian, Cursor — anything that edits `.md` files)
 - Git (recommended but not required)
-- 15 minutes
-
-### 1. Create the Folder Structure
-
-```bash
-mkdir -p .okrmd/{epics,backlog,pulses,cycles,agents,team,templates}
-```
-
-### 2. Create `config.md`
-
-Create `.okrmd/config.md` with minimum required fields:
-
-```markdown
-# OKRMD Project Configuration
-
-## Project
-
-| Field | Value |
-|-------|-------|
-| Project name | my-project |
-| OKRMD version | 0.1 |
-| Created | 2026-02-19 |
-
-## Cycle Settings
-
-| Field | Value |
-|-------|-------|
-| Cycle duration | 14 |
-| Estimation method | pulses |
-
-## Pulse Settings
-
-| Field | Value |
-|-------|-------|
-| Standard Pulse | 25 min |
-| Short rest | 5 min |
-| Long rest (after 4 pulses) | 15 min |
-
-## Autonomy Levels
-
-| Field | Value |
-|-------|-------|
-| Default autonomy | A3 |
-| Max agent autonomy | A2 |
-
-## Team
-
-### Humans
-
-| Name | Role |
-|------|------|
-| your-name | Lead |
-
-### Agents
-
-| Name | Model |
-|------|-------|
-| claude-code | claude-sonnet-4 |
-```
-
-### 3. Create Your First Epic and Story
-
-Create the epic folder:
-
-```bash
-mkdir -p .okrmd/epics/E1-my-first-epic
-```
-
-Create `.okrmd/epics/E1-my-first-epic/_epic.md`:
-
-```markdown
-# Epic: My First Epic
-
-| Field | Value |
-|-------|-------|
-| ID | E1 |
-| Title | My First Epic |
-| Status | in-progress |
-| Owner | your-name |
-
-## Description
-
-What this epic delivers. 2–3 sentences.
-
-## Stories
-
-| Story | Title | Assignee | Status |
-|-------|-------|----------|--------|
-| [[S1.1]] | First Story | your-name | draft |
-| [[S1.2]] | Second Story | claude-code | draft |
-```
-
-Create your first story `.okrmd/epics/E1-my-first-epic/S1.1-first-story.md`:
-
-```markdown
-# Story: First Story
-
-| Field | Value |
-|-------|-------|
-| ID | S1.1 |
-| Title | First Story |
-| Epic | [[E1]] |
-| Status | ready |
-| Assignee | your-name |
-| Autonomy | A5 |
-
-## Story
-
-As a user, I need [capability] so that [benefit].
-
-## Acceptance Criteria
-
-- [ ] First criterion
-- [ ] Second criterion
-- [ ] Third criterion
-
-## Tasks
-
-- [ ] First task
-- [ ] Second task
-- [ ] Third task
-```
-
-### 4. Start Your First Pulse
-
-Create `.okrmd/pulses/2026-02-19-your-name.md`:
-
-```markdown
-# Pulse Log — your-name — 2026-02-19
-
-| Metric | Value |
-|--------|-------|
-| Pulses completed | 0 |
-| Total focus time | 0 min |
-
-## Pulse 1 (09:00–09:25) — 25 min
-- **Task**: [[S1.1]] — First task
-- **Status**: _fill in after pulse_
-- **Interruptions**: 0
-```
-
-Now set a 25-minute timer and start working. When the timer ends, fill in the status, take a 5-minute rest, and log the next Pulse.
-
----
-
-## 📁 Folder Structure
-
-```
-.okrmd/
-├── config.md                     # Project configuration (required)
-│
-├── objectives/                   # Strategic goals
-├── key-results/                  # Measurable outcomes
-├── phases/                       # Delivery gates
-├── epics/                        # Large work areas (folders containing stories)
-├── prds/                         # Product Requirements Documents
-├── cycles/                       # Sprint/iteration timeboxes
-├── backlog/                      # Orphan/unplanned work items
-├── pulses/                       # Daily focus session logs
-├── agents/                       # AI agent profiles
-├── team/                         # Human team member profiles
-├── retros/                       # Retrospective documents
-└── templates/                    # File templates for all entity types
-```
-
----
+- 5 minutes to read the tutorial
+- Start planning
 
 ## 🎯 Core Concepts
 
@@ -239,13 +76,7 @@ This repository contains the initial OKRMD standard documentation:
 
 | Document | Purpose |
 |----------|---------|
-| [Quick Start Guide](tmp/okrmd-quick-start-guide.md) | Get running in 15 minutes |
-| [Folder Structure Standard](tmp/okrmd-folder-structure-standard.md) | Where each file belongs |
-| [Naming Conventions](tmp/okrmd-naming-convention-standard.md) | IDs, slugs, and file names |
-| [Autonomy Levels Reference](tmp/okrmd-autonomy-levels-reference.md) | A1–A5 detailed guide |
-| [Workflows Guide](tmp/okrmd-workflows-guide.md) | Ceremonies and processes |
-| [Config Template](tmp/okrmd-config-template.md) | Complete `config.md` reference |
-| [Manifesto](tmp/okrmd-manifesto.md) | Philosophy and principles |
+| [Manifesto](MANIFESTO.md) | Philosophy and principles |
 
 ---
 
@@ -307,6 +138,8 @@ Future versions will include:
 
 - [ ] Review of the initial draft proposal for Stories
 - [ ] Review of the initial draft proposal for Epics
+- [ ] Review of other initial documents used in OKRMD
+- [ ] Review of the initial tutorial on how to use OKRMD
 - [ ] Official schema validation tool
 
 ---
